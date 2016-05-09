@@ -45,14 +45,8 @@ Windows Phone 8
 ## 3. Installation
 
 ### Automatically (CLI / Plugman)
-Compatible with [Cordova Plugman](https://github.com/apache/cordova-plugman), compatible with [PhoneGap 3.0 CLI](http://docs.phonegap.com/en/3.0.0/guide_cli_index.md.html#The%20Command-line%20Interface_add_features), here's how it works with the CLI (backup your project first!):
-
 ```
-$ phonegap local plugin add https://github.com/EddyVerbruggen/cordova-plugin-actionsheet.git
-```
-or
-```
-$ cordova plugin add https://github.com/EddyVerbruggen/cordova-plugin-actionsheet
+$ cordova plugin add cordova-plugin-actionsheet
 $ cordova prepare
 ```
 
@@ -99,7 +93,7 @@ WP8: Copy `ActionSheet.cs` to `platforms/wp8/Plugins/nl.x-services.plugins.actio
 ### PhoneGap Build
 ActionSheet  works with PhoneGap build too! Just add the following xml to your `config.xml` to always use the latest version of this plugin:
 ```xml
-<gap:plugin name="nl.x-services.plugins.actionsheet" />
+<gap:plugin name="cordova-plugin-actionsheet" source="npm" />
 ```
 
 ActionSheet.js is brought in automatically. Make sure though you include a reference to cordova.js in your index.html's head:
@@ -175,8 +169,10 @@ Android code: mostly [Brill Papping](https://github.com/bpappin)
 
 
 ## 6. Change history
-1.1.2 You can now select a theme for your Android popup, see the first example above
-1.1.6 You can now set the iOS actionSheet origin position (uses the iOS `actionSheet.showFromRect` method)
+* 2.2.2 OK, 2.2.1 has issues with Russian and the like, so reverted. Just add `<meta charset="utf-8" />` to your html file.
+* 2.2.1 Encoding of diacritical characters fixed on iOS, so you can now use `Español` as a title or button label.
+* 1.1.6 You can now set the iOS actionSheet origin position (uses the iOS `actionSheet.showFromRect` method)
+* 1.1.2 You can now select a theme for your Android popup, see the first example above
 
 ## 7. License
 
